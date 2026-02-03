@@ -1,0 +1,17 @@
+# LaTeX generated files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.xdv
+
+# Optional: Ignore the PDF too
+# Since we are setting up GitHub Actions to build the PDF for us, 
+# it is cleaner to ignore your local copy so they don't conflict.
+*.pdf
+
+# OS generated files
+.DS_Store
