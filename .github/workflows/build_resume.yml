@@ -1,0 +1,34 @@
+name: Build Resume
+
+# Trigger: Run this on every push to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # This step compiles the LaTeX into a PDF
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+
+      # This step creates a folder, moves the PDF there, and prepares it for hosting
+      - name: Prepare Deployment
+        run: |
+          mkdir public
+          mv resume.pdf public/index.pdf  # Rename to index.pdf implies it's the main file
+
+      # This step deploys the 'public' folder to the 'gh-pages' branch
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
