@@ -7,24 +7,45 @@ on:
       - main
 
 jobs:
-  build_and_deploy:
+  build_latex:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # REQUIRED to allow the bot to commit the PNG back to the repo
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # This step compiles the LaTeX into a PDF
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
+          # We use xelatex because it handles modern fonts better than pdflatex
+          latex_engine: xelatex
+
+      # Convert the first page of the PDF to a high-res PNG
+      - name: Generate Thumbnail
+        uses: docker://dpokidov/imagemagick
+        with:
+          args: -density 300 -quality 100 -background white -alpha remove resume.pdf[0] resume.png
+
+      # Commit the PNG back to the repository so you can see it
+      - name: Commit PNG to Repo
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update resume thumbnail [skip ci]"
+          file_pattern: resume.png
 
       # This step creates a folder, moves the PDF there, and prepares it for hosting
-      - name: Prepare Deployment
+      - name: Create Public Folder for Hosting
         run: |
           mkdir public
-          mv resume.pdf public/index.pdf  # Rename to index.pdf implies it's the main file
+          cp resume.pdf public/resume.pdf
+          cp resume.pdf public/index.pdf
+          # We copy it twice: 
+          # 1. /resume.pdf (logical name)
+          # 2. /index.pdf (so the browser opens it automatically if you go to the root URL)
 
       # This step deploys the 'public' folder to the 'gh-pages' branch
       - name: Deploy to GitHub Pages
