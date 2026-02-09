@@ -43,6 +43,8 @@ jobs:
           mkdir public
           cp resume.pdf public/resume.pdf
           cp resume.pdf public/index.pdf
+          # Create an index.html that instantly redirects to the PDF
+          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=resume.pdf"></head><body>Redirecting to resume...</body></html>' > public/index.html
           # We copy it twice: 
           # 1. /resume.pdf (logical name)
           # 2. /index.pdf (so the browser opens it automatically if you go to the root URL)
