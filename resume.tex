@@ -139,11 +139,12 @@
 {Associate}{June 2025 -- Present}
 {Institutional Shareholder Services}{Mumbai}
 \resumeItemListStart
-\resumeItem{Built a dynamic Field Mapping UI in React to transform arbitrary Excel uploads into structured, pipeline-ready data, handling header normalization, custom pagination bucketing, validation feedback, error exports, and ingestion workflows.}
-\resumeItem{Designed a multi-step async workflow coordinating 7+ APIs (S3 upload, header mapping, polling, validation, result retrieval, submission) with resilient state management and clear UX feedback.}
-\resumeItem{Resolved an API Gateway timeout bottleneck by architecting a direct React-to-Java service communication flow, securing the zero-trust architecture with Auth0, PKCE, Asymmetric JWTs(JWKS) and resolving CORS issues.}
+\resumeItem{Built a dynamic Field Mapping UI in React with a resilient async workflow (S3 uploads, polling, custom pagination bucketing) to transform arbitrary Excel data into structured, pipeline-ready datasets.}
+\resumeItem{Optimized data-fetching performance by configuring Apollo Client cache normalization (\texttt{keyFields}) and redesigning shared hooks, eliminating duplicate GraphQL queries and phantom refetches.}
+\resumeItem{Reduced network payload sizes for heavy Excel/Word report pipelines by shifting client-side JavaScript filtering directly to the Postgres database layer via Hasura GraphQL query predicates.}
 \resumeItem{Led the end-to-end integration of the IFRS sustainability framework, refactoring legacy hardcoded frontend state into a scalable, database-driven architecture using GraphQL and Apollo Client.}
-\resumeItem{Executed a database migration of 14+ core entities from MySQL to SQL Server, reverse-engineering undocumented ORM logic into optimized Stored Procedures and building a new Java/Spring Boot API layer.}
+\resumeItem{Resolved an API Gateway timeout bottleneck by architecting a direct React-to-Java service communication flow, securing the system with Auth0 (PKCE, asymmetric JWT, JWKS) and addressing cross-origin constraints.}
+\resumeItem{Executed a database migration of 14+ core entities from MySQL to SQL Server, reverse-engineering undocumented ORM logic into optimized Stored Procedures.}
 \resumeItemListEnd
 
 % -----------Multiple Positions Heading-----------
