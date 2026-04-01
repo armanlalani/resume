@@ -21,7 +21,6 @@
 \usepackage{tabularx}
 \input{glyphtounicode}
 
-
 %----------FONT OPTIONS----------
 % sans-serif
 % \usepackage[sfdefault]{FiraSans}
@@ -32,7 +31,6 @@
 % serif
 % \usepackage{CormorantGaramond}
 % \usepackage{charter}
-
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -65,45 +63,49 @@
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
+\item\small{
     {#1 \vspace{-2pt}}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+  \vspace{-2pt}
+\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textit{\small#1} & \textit{\small #2} \\
+  \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & #2 \\
+  \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{
+\begin{itemize}[leftmargin=0.15in, label={}]}
+    \newcommand{\resumeSubHeadingListEnd}{
+\end{itemize}}
+\newcommand{\resumeItemListStart}{
+\begin{itemize}}
+    \newcommand{\resumeItemListEnd}{
+\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \begin{document}
 
@@ -114,26 +116,36 @@
 % \end{tabular*}
 
 \begin{center}
-    \textbf{\Huge \scshape Arman Lalani} \\ \vspace{1pt}
-    \small +91-7977231758 $|$ \href{mailto:armanlalani5@gmail.com}{\underline{armanlalani5@gmail.com}} $|$ 
-    \href{https://www.linkedin.com/in/armanlalani}{\underline{linkedin.com/in/armanlalani}} $|$
-    \href{https://github.com/armanlalani}{\underline{github.com/armanlalani}} $|$
-    \href{https://www.armanlalani.com}{\underline{armanlalani.com/}}
+  \textbf{\Huge \scshape Arman Lalani} \\ \vspace{1pt}
+  \small +91-7977231758 $|$ \href{mailto:armanlalani5@gmail.com}{\underline{armanlalani5@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/armanlalani}{\underline{linkedin.com/in/armanlalani}} $|$
+  \href{https://github.com/armanlalani}{\underline{github.com/armanlalani}} $|$
+  \href{https://www.armanlalani.com}{\underline{armanlalani.com/}}
 
 \end{center}
 
+%-----------SUMMARY-----------
+\vspace{-5pt}
+\begin{center}
+  \small{Senior Frontend Engineer with strong system understanding, specializing in complex, data-heavy applications and scalable frontend architectures. Focused on solving deep state management, performance, and API integration challenges, with a proven track record of owning features end-to-end in product-driven environments.}
+\end{center}
+\vspace{-5pt}
 
 %-----------EXPERIENCE-----------
 \section{Experience}
-  \resumeSubHeadingListStart
+\resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Associate}{June 2025 -- Present}
-      {Institutional Shareholder Services}{Mumbai}
-      \resumeItemListStart
-        \resumeItem{Built a dynamic Field Mapping UI from scratch in React to transform arbitrary Excel uploads into structured, pipeline-ready data, handling header normalization, validation feedback, and error exports.}
-      \resumeItemListEnd
-      
+\resumeSubheading
+{Associate}{June 2025 -- Present}
+{Institutional Shareholder Services}{Mumbai}
+\resumeItemListStart
+\resumeItem{Built a dynamic Field Mapping UI in React to transform arbitrary Excel uploads into structured, pipeline-ready data, handling header normalization, custom pagination bucketing, validation feedback, error exports, and ingestion workflows.}
+\resumeItem{Designed a multi-step async workflow coordinating 7+ APIs (S3 upload, header mapping, polling, validation, result retrieval, submission) with resilient state management and clear UX feedback.}
+\resumeItem{Resolved an API Gateway timeout bottleneck by architecting a direct React-to-Java service communication flow, securing the zero-trust architecture with Auth0, PKCE, Asymmetric JWTs(JWKS) and resolving CORS issues.}
+\resumeItem{Led the end-to-end integration of the IFRS sustainability framework, refactoring legacy hardcoded frontend state into a scalable, database-driven architecture using GraphQL and Apollo Client.}
+\resumeItem{Executed a database migration of 14+ core entities from MySQL to SQL Server, reverse-engineering undocumented ORM logic into optimized Stored Procedures and building a new Java/Spring Boot API layer.}
+\resumeItemListEnd
+
 % -----------Multiple Positions Heading-----------
 %    \resumeSubSubheading
 %     {Software Engineer I}{Oct 2014 - Sep 2016}
@@ -143,58 +155,45 @@
 %     \resumeItemListEnd
 %    \resumeSubHeadingListEnd
 %-------------------------------------------
-
-    \resumeSubheading
-      {Fullstack Engineer}{June 2021 -- May 2025}
-      {Tata Consultancy Services}{Mumbai}
-      \resumeItemListStart
-        \resumeItem{\emph{Collaborated with over 3 clients} to gather requirements, design prototypes, and implement final solutions in React based on feedback.}
-        \resumeItem{Designed and implemented a scheduling feature that improved operational efficiency by 30\% for upcoming activities over the next 7 days.}
-        \resumeItem{Created dynamic charts and graphs to visualize critical machine parameters, ensuring real-time data visibility and improving response times by 25\%.}
-        \resumeItem{Authored comprehensive React unit test cases to maintain 95\%+ test coverage, maintaining reliability and performance.}
-        \resumeItem{Provided ongoing support for the application, troubleshooting issues and ensuring system stability for over 500 end users.}
-        \resumeItem{Resolved 10+ cloud vulnerabilities in AWS Lambdas by using AWS Secrets, enhancing data security and compliance.}
-        \resumeItem{Played a key role in replicating and verifying 20+ APIs during database migration, ensuring data consistency through Postman test cases.}
-        \resumeItem{Built an export functionality that allowed users to download actionable insights in Excel format, increasing report accessibility by 40\%.}
-        \resumeItem{Delivered monthly presentations to stakeholders on project updates and technical progress.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-
+\resumeSubheading
+{Fullstack Engineer}{June 2021 -- May 2025}
+{Tata Consultancy Services}{Mumbai}
+\resumeItemListStart
+\resumeItem{Engineered an automated scheduling feature, real-time machine parameter visualizations, and customized Excel export workflows, improving operational efficiency by 30\% and report accessibility by 40\%.}
+\resumeItem{Secured cloud infrastructure by resolving 10+ AWS Lambda vulnerabilities using AWS Secrets Manager, ensuring strict data security and compliance.}
+\resumeItem{Facilitated a seamless database migration by replicating and validating 20+ complex APIs, identifying edge cases through comprehensive Postman testing suites.}
+\resumeItem{Maintained high system reliability for 500+ users by authoring robust React unit tests using Jest and Enzyme, consistently achieving 95\%+ code coverage.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
 \section{Projects}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Real-Time Manufacturing Analytics Platform} $|$ \emph{React, Redux, React Router, Node.js, Highcharts, PostgreSQL}}{}
-          \resumeItemListStart
-            \resumeItem{Developed a comprehensive analytics platform that delivered real-time insights into manufacturing operations, enhancing decisionmaking through interactive dashboards.}
-            \resumeItem{Implemented a filter feature to display only relevant sensor values, improving the user experience for live monitoring.}
-            \resumeItem{Created customized time series and bar charts to display production and machine performance data, enhancing visual analytics.}
-            \resumeItem{Integrated a shop floor layout view with location-specific machine data, enabling users to track key performance indicators effectively.}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
-
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Real-Time Manufacturing Analytics Platform} $|$ \emph{React, Node.js, Highcharts, PostgreSQL}}{}
+\resumeItemListStart
+\resumeItem{Developed an interactive dashboard that mapped live sensor values and machine performance data onto a digital shop floor layout, allowing operators to filter and track physical plant operations in real-time.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
 
 %
 %-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: JavaScript, Typescript, HTML/CSS, SQL} \\
-     \textbf{Libraries \& Frameworks}{: React, Node.js, Redux, React Router, Jest, Enzyme, Material-UI, Tailwind, SASS, LESS, Git, Restful APIs, Webpack, NPM, Babel, JSON} \\
-     \textbf{Other Skills}{: Responsive Web Design, Data Structures and Algorithms, Web Performance Optimization, Frontend Development, SonarQube, Technical Development} \\
-     \textbf{Developer Tools}{: Git, Docker, VS Code} \\
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{
+    \item{
+        \textbf{Languages}{: JavaScript, Typescript, HTML/CSS, SQL} \\
+        \textbf{Libraries \& Frameworks}{: React, Node.js, GraphQL, Apollo Client, Redux, React Router, Jest, Enzyme, Material-UI, Tailwind, SASS, LESS, NPM, Babel, JSON} \\
+        \textbf{Tools \& Architecture}{: Auth0 (PKCE), Git, Docker, Hasura, Nhost, AWS, Webpack, Copilot, SonarQube, REST APIs} \\
     }}
- \end{itemize}
+\end{itemize}
 %-----------EDUCATION-----------
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Dwarkadas J Sanghvi College of Engineering, Mumbai University}{2021}
-      {Bachelor of Engineering (B.E.) $|$ 8.7 CGPA}{}
-  \resumeSubHeadingListEnd
-
+\resumeSubHeadingListStart
+\resumeSubheading
+{Dwarkadas J Sanghvi College of Engineering, Mumbai University}{2021}
+{Bachelor of Engineering (B.E.) $|$ 8.7 CGPA}{}
+\resumeSubHeadingListEnd
 
 %-------------------------------------------
 \end{document}
