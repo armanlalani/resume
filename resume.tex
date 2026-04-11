@@ -19,6 +19,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{graphicx}
 \input{glyphtounicode}
 
 %----------FONT OPTIONS----------
@@ -59,6 +60,9 @@
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
+
+% Smaller plus sign for use in bold text
+\newcommand{\plus}{\raisebox{0.2ex}{\scalebox{0.75}{\textbf{+}}}}
 
 %-------------------------
 % Custom commands
@@ -127,7 +131,7 @@
 %-----------SUMMARY-----------
 \vspace{-5pt}
 \begin{center}
-  \small{Senior Frontend Engineer specializing in data-rich applications and scalable UI systems. Strong in state management, performance optimization, and API integration. Proven track record of owning features end-to-end in product-driven environments and bridging the gap between backend design and frontend execution.}
+  \small{Frontend Engineer with 5 years of experience building data-intensive SaaS applications, specializing in React, GraphQL/Apollo, and state management for performant UIs. Proactively works across frontend, backend, and infrastructure layers to unblock development, having owned features end-to-end across ESG reporting and manufacturing.}
 \end{center}
 \vspace{-5pt}
 
@@ -139,13 +143,13 @@
 {Associate Software Engineer}{June 2025 -- Present}
 {ISS Stoxx (Institutional Shareholder Services)}{Mumbai}
 \resumeItemListStart
-\resumeItem{Built a \textbf{Field Mapping UI in React} to process custom Excel uploads and designed an \textbf{async workflow (S3 uploads, polling, pagination bucketing)} that transformed unstructured data into pipeline-ready datasets.}
-\resumeItem{Improved data-fetching performance by configuring \textbf{Apollo Client cache normalization} and refactoring shared hooks, eliminating duplicate GraphQL queries and unnecessary refetches.}
+\resumeItem{Owned end-to-end delivery of a multi-step \textbf{Field Mapping UI} for an ESG data platform, designing an \textbf{async workflow (S3 uploads, polling, pagination bucketing)} that let users map their Excel column headers to system-expected fields before pipeline ingestion.}
+\resumeItem{Eliminated duplicate GraphQL queries and unnecessary refetches by configuring Apollo \texttt{InMemoryCache} \texttt{keyFields} and refactoring shared hooks.}
 \resumeItem{Moved data filtering logic from client-side JavaScript directly to the \textbf{Postgres database} using Hasura GraphQL query predicates, reducing data transfer size for heavy export pipelines.}
 \resumeItem{Led the integration of the \textbf{IFRS framework} by replacing hardcoded frontend logic with a dynamic, \textbf{database-driven approach} using GraphQL and Apollo Client.}
-\resumeItem{Resolved \textbf{API Gateway timeouts} by enabling direct communication between the React app and Java services, implementing \textbf{Auth0-based authentication} (PKCE, JWT, JWKS) and addressing CORS issues.}
-\resumeItem{Implemented \textbf{user tracking} by adding identity headers via React Context and forwarding them through the Node.js layer using \textbf{AsyncLocalStorage}, removing the need for manual changes across \textbf{30+ API handlers}.}
-\resumeItem{Contributed to the migration of \textbf{14+ core entities} from MySQL to SQL Server by translating undocumented ORM-based queries into \textbf{stored procedures} for improved performance and maintainability.}
+\resumeItem{Resolved \textbf{API Gateway timeouts} by enabling direct React-to-Java communication; mentored the backend team on \textbf{Auth0-based authentication} (PKCE, JWT, JWKS) and fixed CORS configuration issues.}
+\resumeItem{Implemented \textbf{user tracking} by adding identity headers via React Context and forwarding them through the Node.js layer using \textbf{AsyncLocalStorage}, removing the need for manual changes across \textbf{30\plus{} API handlers}.}
+\resumeItem{Contributed to a \textbf{MySQL to SQL Server migration} by translating 14 undocumented ORM queries into stored procedures; identified missing FK constraints and a non-deterministic aggregation bug caused by the disabled \texttt{ONLY\_FULL\_GROUP\_BY} SQL mode, and rewrote the affected queries with explicit aggregations.}
 \resumeItemListEnd
 
 % -----------Multiple Positions Heading-----------
@@ -161,10 +165,10 @@
 {Software Engineer}{June 2021 -- May 2025}
 {Tata Consultancy Services}{Mumbai}
 \resumeItemListStart
-\resumeItem{Built scheduling features, real-time dashboards, and Excel export workflows in React, improving \textbf{operational efficiency by 30\%} and \textbf{report accessibility by 40\%}.}
-\resumeItem{Resolved \textbf{10+ vulnerabilities} in AWS Lambdas using AWS Secrets Manager to ensure cloud infrastructure met strict security and compliance standards.}
-\resumeItem{Supported database migration by validating \textbf{20+ APIs} and identifying edge cases through structured \textbf{Postman testing}.}
-\resumeItem{Maintained \textbf{95\%+ code coverage} with Jest and Enzyme, ensuring reliable system performance for an active user base of over \textbf{500 operators}.}
+\resumeItem{Built scheduling features, real-time dashboards, and Excel export workflows in React for a manufacturing SaaS platform serving \textbf{500\plus{} plant operators}.}
+\resumeItem{Remediated \textbf{10\plus{} security vulnerabilities} in AWS Lambda functions by migrating plaintext credentials to AWS Secrets Manager, meeting enterprise compliance requirements.}
+\resumeItem{Validated \textbf{20\plus{} APIs} during a database migration, identifying and documenting edge cases through structured \textbf{Postman testing}.}
+\resumeItem{Maintained \textbf{95\%\plus{} code coverage} with Jest and Enzyme, enabling confident refactoring and stable releases.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -187,7 +191,7 @@
     \small{
     \item{
         \textbf{Languages}{: JavaScript, TypeScript, HTML/CSS, SQL} \\
-        \textbf{Libraries \& Frameworks}{: React, Node.js, GraphQL, Apollo Client, Redux, React Router, Jest, Enzyme, Material-UI, Tailwind CSS, SASS, LESS, NPM, Babel, JSON} \\
+        \textbf{Libraries \& Frameworks}{: React, Node.js, GraphQL, Apollo Client, Redux, React Router, Jest, Enzyme, Material-UI, Tailwind CSS, SASS, LESS, Babel} \\
         \textbf{Tools \& Architecture}{: Auth0 (PKCE), Git, Hasura, Nhost, AWS, Webpack, GitHub Copilot, SonarQube, REST APIs} \\
     }}
 \end{itemize}
